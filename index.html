@@ -703,6 +703,165 @@
 
   .practical-list li strong { color: var(--ink); font-weight: 400; }
 
+  /* TEAM SECTION */
+  .team { background: var(--cream); padding: 6rem 2rem; }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(156,126,106,0.2);
+    border: 1px solid rgba(156,126,106,0.2);
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+
+  .team-item {
+    padding: 1.8rem 2rem;
+    background: var(--cream);
+    transition: background 0.2s;
+  }
+
+  .team-item:hover { background: var(--bone); }
+  .team-item.full-width { grid-column: 1 / -1; background: var(--bone); }
+  .team-item.full-width:hover { background: var(--cream); }
+
+  .team-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .team-role {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .team-item p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .team-assistants {
+    margin-top: 1px;
+    background: rgba(156,126,106,0.2);
+    border: 1px solid rgba(156,126,106,0.2);
+    border-top: none;
+  }
+
+  .team-assistants-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(156,126,106,0.2);
+  }
+
+  @media (max-width: 600px) { .team-assistants-inner { grid-template-columns: 1fr; } }
+
+  .team-assistant-item {
+    padding: 1.4rem 1.8rem;
+    background: var(--bone);
+    transition: background 0.2s;
+  }
+
+  .team-assistant-item:hover { background: var(--cream); }
+
+  .team-assistant-item .team-name {
+    font-size: 1.05rem;
+    color: var(--ember);
+  }
+
+  .team-assistant-item p {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* LOKALE BLOCK */
+  .lokale-block {
+    margin-top: 3rem;
+    border: 1px solid rgba(156,126,106,0.25);
+    background: var(--bone);
+    overflow: hidden;
+  }
+
+  .lokale-header {
+    padding: 1.2rem 1.8rem;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .lokale-header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--cream);
+  }
+
+  .lokale-header-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--dusty);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .lokale-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(156,126,106,0.2);
+  }
+
+  @media (max-width: 580px) { .lokale-body { grid-template-columns: 1fr; } }
+
+  .lokale-item {
+    padding: 1.3rem 1.8rem;
+    background: var(--bone);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .lokale-item:hover { background: var(--cream); }
+
+  .lokale-icon {
+    font-size: 1rem;
+    color: var(--warm);
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+  }
+
+  .lokale-item p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .lokale-item p strong { color: var(--ink); font-weight: 400; }
+
+  .lokale-note {
+    padding: 1rem 1.8rem;
+    background: rgba(196,56,32,0.06);
+    border-top: 1px solid rgba(196,56,32,0.15);
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.65;
+  }
+
   /* SIGNUP */
   .signup { background: var(--ink); padding: 7rem 2rem; text-align: center; }
   .signup .section-eyebrow { color: var(--dusty); }
@@ -807,8 +966,8 @@
       pr. par
     </div>
     <div class="hero-meta-item">
-      <strong>Valby Kulturhus</strong>
-      Ved teatersalen
+      <strong>Nær Danshøj station</strong>
+      Adresse sendes ved tilmelding
     </div>
     <div class="hero-meta-item">
       <strong>Sprog: dansk</strong>
@@ -1080,6 +1239,48 @@
   </div>
 </div>
 
+<!-- HVEM STÅR BAG -->
+<section class="team" id="team">
+  <div class="container">
+    <span class="section-eyebrow reveal">Holdet bag</span>
+    <h2 class="section-title reveal">Hvem <em>står bag?</em></h2>
+    <p class="lead reveal">Vi er et lille hold med forskellige kompetencer — forenet af nysgerrighed, erfaring og kærlighed til det gode rum.</p>
+
+    <div class="team-grid reveal">
+      <div class="team-item">
+        <div class="team-name">Nikolaj</div>
+        <span class="team-role">Underviser &amp; Initiativtager</span>
+        <p>Har lavet dirty talk-workshops siden 2019 og har holdt ca. 15–25 stykker. Nikolaj arbejder til daglig på et bibliotek og elsker bøger — og det mærkes i tilgangen til sproget og den litterære dimension af workshoppen.</p>
+      </div>
+      <div class="team-item">
+        <div class="team-name">Marie</div>
+        <span class="team-role">Underviser &amp; Stemmeekspert</span>
+        <p>Underviser og laver workshops med stemmen som omdrejningspunkt. Elsker sang og bøger — og bringer den vokale og sanselige dimension til weekenden.</p>
+      </div>
+    </div>
+
+    <div class="team-assistants reveal">
+      <div class="team-assistants-inner">
+        <div class="team-assistant-item">
+          <div class="team-name">xx</div>
+          <span class="team-role">SoMe &amp; Fotografering</span>
+          <p>Hjælper med kommunikation på sociale medier og varetager fotosessionerne under workshoppen.</p>
+        </div>
+        <div class="team-assistant-item">
+          <div class="team-name">zz</div>
+          <span class="team-role">Øvelsesassistent</span>
+          <p>Assisterer under øvelserne — er klar til at hjælpe hvis energien går i stå eller øvelserne trænger til nyt liv.</p>
+        </div>
+        <div class="team-assistant-item">
+          <div class="team-name">yy</div>
+          <span class="team-role">Øvelsesassistent &amp; Praktisk</span>
+          <p>Assisterer under øvelserne og hjælper praktisk med alt det der sker i baggrunden for at weekenden løber glat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PRISER -->
 <section class="pricing" id="priser">
   <div class="container">
@@ -1178,7 +1379,7 @@
     <h2 class="section-title reveal"><em>Alt</em> du skal vide</h2>
     <ul class="practical-list reveal">
       <li><strong>Dato:</strong>&nbsp; 5–6 september 2026</li>
-      <li><strong>Sted:</strong>&nbsp; Valby Kulturhus — ved teatersalen</li>
+      <li><strong>Sted:</strong>&nbsp; Privat sted nær Danshøj station — præcis adresse sendes ved tilmelding</li>
       <li><strong>Tid:</strong>&nbsp; Kl. 10:00–16:00 begge dage — ca. 6 timer med tre pauser</li>
       <li><strong>Sprog:</strong>&nbsp; Workshoppen foregår udelukkende på dansk</li>
       <li><strong>Deltagere:</strong>&nbsp; For par — begge parter deltager hele weekenden</li>
@@ -1187,7 +1388,39 @@
       <li><strong>Depositum:</strong>&nbsp; 1.000 kr pr. par via MobilePay — ikke refunderbart</li>
       <li><strong>Fotosession:</strong>&nbsp; Frivilligt tilvalg under øvelser — 250–350 kr for 3–4 private billeder</li>
       <li><strong>Pladser:</strong>&nbsp; Ca. 18 deltagere — begrænset antal for en intim og tryg atmosfære</li>
+      <li><strong>Handicapvenlig adgang:</strong>&nbsp; Desværre ikke tilgængelig</li>
     </ul>
+
+    <!-- LOKALE INFO -->
+    <div class="lokale-block reveal">
+      <div class="lokale-header">
+        <div>
+          <span class="lokale-header-eyebrow">Rammerne</span>
+          <div class="lokale-header-title">Lokalerne og stemningen</div>
+        </div>
+      </div>
+      <div class="lokale-body">
+        <div class="lokale-item">
+          <div class="lokale-icon">🏠</div>
+          <p><strong>Hjemlige omgivelser</strong> — vi er i hjemlige rammer, som vi tror kan skabe en afslappet og tryg stemning fra første stund.</p>
+        </div>
+        <div class="lokale-item">
+          <div class="lokale-icon">🚪</div>
+          <p><strong>To lokaler</strong> til rådighed — plus et privat lokale man kan bruge periodevis, hvis man er meget genert eller har brug for et øjebliks ro.</p>
+        </div>
+        <div class="lokale-item">
+          <div class="lokale-icon">🎧</div>
+          <p><strong>Høreværn og støjdæmpning</strong> er tilgængeligt — har du brug for en pause fra lyd, er der måder at fravælge det på.</p>
+        </div>
+        <div class="lokale-item">
+          <div class="lokale-icon">♿</div>
+          <p><strong>Handicapvenlig adgang:</strong> Stedet er desværre ikke handicapvenligt tilgængeligt. Kontakt os hvis du har spørgsmål.</p>
+        </div>
+      </div>
+      <div class="lokale-note">
+        Præcis adresse og praktisk information om ankomst sendes til tilmeldte deltagere inden weekenden.
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1204,7 +1437,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>Dirty Talk Workshop &nbsp;·&nbsp; 5–6 september 2026 &nbsp;·&nbsp; Valby Kulturhus &nbsp;·&nbsp; For par &nbsp;·&nbsp; På dansk</p>
+  <p>Dirty Talk Workshop &nbsp;·&nbsp; 5–6 september 2026 &nbsp;·&nbsp; Nær Danshøj station &nbsp;·&nbsp; For par &nbsp;·&nbsp; På dansk</p>
 </footer>
 
 <script>
