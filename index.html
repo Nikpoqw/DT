@@ -1624,6 +1624,29 @@
 </footer>
 
 <script>
+  // Reveal on scroll
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
-      if (e.isIntersecting
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          e.target.classList.add('visible');
+        }, i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    if (q) {
+      q.addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    }
+  });
+</script>
+</body>
+</html>
