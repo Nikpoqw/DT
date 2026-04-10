@@ -1,1 +1,1456 @@
-find version før gemini? 
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dirty Talk Workshop 2026 — For Par</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:   #FAF0E2;
+    --bone:    #F0E2CC;
+    --dusty:   #D4A882;
+    --warm:    #B87850;
+    --ember:   #8C4A28;
+    --dark:    #301808;
+    --ink:     #1E0E04;
+    --accent:  #C43820;
+    --gold:    #D4882A;
+    --muted:   #7A4830;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: var(--dark);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 40%, rgba(180,90,40,0.45) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 50% at 20% 80%, rgba(210,60,20,0.18) 0%, transparent 60%);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dusty);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.3em;
+    opacity: 0;
+    animation: fadeUp 1s 0.4s forwards;
+  }
+
+  .hero-title em { font-style: italic; color: var(--dusty); }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--dusty);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.6s forwards;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    animation: fadeUp 1s 0.8s forwards;
+  }
+
+  .hero-meta-item {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty);
+    opacity: 0.8;
+  }
+
+  .hero-meta-item strong {
+    display: block;
+    color: var(--cream);
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2em;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid rgba(205,190,170,0.4);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    transition: all 0.35s ease;
+    opacity: 0;
+    animation: fadeUp 1s 1s forwards;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(205,190,170,0.08);
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+  }
+
+  .hero-cta:hover::before { transform: translateX(0); }
+  .hero-cta:hover { border-color: rgba(205,190,170,0.7); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--dusty);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1s 1.4s forwards;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--dusty), transparent);
+    animation: scrollPulse 2s 2s infinite;
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 2rem; }
+  .container { max-width: 860px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--ember); }
+  .lead { font-size: 1.05rem; color: var(--muted); max-width: 620px; line-height: 1.8; }
+
+  /* INTRO */
+  .intro { background: var(--bone); }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+
+  @media (max-width: 680px) { .intro-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+  /* FORMÅL */
+  .formal-block {
+    margin-bottom: 2rem;
+  }
+
+  .formal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(184,120,80,0.2);
+    border: 1px solid rgba(184,120,80,0.2);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) { .formal-grid { grid-template-columns: 1fr; } }
+
+  .formal-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.4rem 1.6rem;
+    background: var(--bone);
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .formal-item:hover { background: var(--cream); }
+
+  .formal-icon {
+    font-size: 1.1rem;
+    color: var(--warm);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .formal-item p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+  /* REGLER */
+  .rules-block {
+    border-left: 3px solid var(--accent);
+    background: rgba(196,56,32,0.06);
+    padding: 1.5rem 2rem;
+    margin-top: 1rem;
+  }
+
+  .rules-header { margin-bottom: 1rem; }
+
+  .rules-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--ember);
+    letter-spacing: 0.02em;
+  }
+
+  .rules-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .rules-list li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding-left: 1.2rem;
+    position: relative;
+    line-height: 1.65;
+  }
+
+  .rules-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .rules-list li strong { color: var(--ink); font-weight: 400; }
+
+  .intro-visual {
+    position: relative;
+    padding: 3rem;
+  }
+
+  .intro-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(156,126,106,0.3);
+  }
+
+  .intro-visual::after {
+    content: '';
+    position: absolute;
+    top: 12px; left: 12px; right: -12px; bottom: -12px;
+    border: 1px solid rgba(156,126,106,0.15);
+    z-index: -1;
+  }
+
+  .intro-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--ember);
+    line-height: 1.55;
+  }
+
+  .intro-quote-attr {
+    display: block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dusty);
+    margin-top: 1.5rem;
+  }
+
+  /* PROGRAM */
+  .program { background: var(--cream); }
+  .program-day2 { background: var(--bone); padding-top: 0; }
+
+  .timeline-bar {
+    display: flex;
+    margin-bottom: 3rem;
+    border: 1px solid rgba(156,126,106,0.2);
+    overflow: hidden;
+  }
+
+  .time-slot {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 0.3rem;
+    border-right: 1px solid rgba(156,126,106,0.2);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .time-slot:last-child { border-right: none; }
+  .time-slot.break { background: var(--bone); color: var(--dusty); }
+  .time-slot strong { display: block; color: var(--ink); font-weight: 400; font-size: 0.78rem; margin-bottom: 0.1rem; }
+
+  .program-grid {
+    display: grid;
+    gap: 1px;
+    background: rgba(156,126,106,0.2);
+    border: 1px solid rgba(156,126,106,0.2);
+    margin-bottom: 1rem;
+  }
+
+  .program-item {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.5rem;
+    padding: 1.4rem 1.8rem;
+    background: var(--cream);
+    transition: background 0.2s;
+    align-items: start;
+  }
+
+  .program-item:hover { background: var(--bone); }
+
+  .program-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--dusty);
+    line-height: 1;
+    padding-top: 0.15rem;
+  }
+
+  .program-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+  }
+
+  .program-content p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+  .program-special {
+    background: var(--dark);
+    padding: 1.4rem 1.8rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .program-special .program-letter { color: var(--dusty); }
+
+  .program-special h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+
+  .program-special p { font-size: 0.88rem; color: var(--dusty); }
+
+  .photo-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-left: 0.7rem;
+  }
+
+  /* PROGRAM NOTE BOX */
+  .program-note {
+    margin-top: 1.2rem;
+    padding: 1rem 1.5rem;
+    border-left: 2px solid rgba(184,120,80,0.4);
+    background: rgba(184,120,80,0.07);
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ACADEMIC */
+  .academic { background: var(--dark); padding: 6rem 2rem; }
+  .academic .section-eyebrow { color: var(--dusty); }
+  .academic .section-title { color: var(--cream); }
+
+  .academic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1px;
+    background: rgba(205,190,170,0.1);
+    margin-top: 3rem;
+    border: 1px solid rgba(205,190,170,0.1);
+  }
+
+  .academic-item {
+    padding: 1.5rem 1.8rem;
+    background: var(--dark);
+    transition: background 0.25s;
+  }
+
+  .academic-item:hover { background: rgba(156,126,106,0.15); }
+
+  .academic-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.4rem;
+  }
+
+  .academic-item p { font-size: 0.82rem; color: var(--dusty); line-height: 1.6; }
+
+  /* PHOTO STRIP */
+  .photo-strip {
+    background: var(--ember);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-strip::before {
+    content: '◆';
+    position: absolute;
+    font-size: 18rem;
+    color: rgba(255,255,255,0.04);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .photo-strip .section-eyebrow { color: rgba(255,255,255,0.45); }
+  .photo-strip .section-title { color: var(--cream); margin-bottom: 0.8rem; }
+  .photo-strip .lead { color: rgba(245,239,230,0.72); margin: 0 auto; }
+
+  .photo-price {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    border: 1px solid rgba(245,239,230,0.3);
+    color: var(--cream);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* PRICING */
+  .pricing { background: var(--bone); }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 560px) { .pricing-cards { grid-template-columns: 1fr; } }
+
+  .price-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(156,126,106,0.25);
+    background: var(--cream);
+    position: relative;
+  }
+
+  .price-card.featured { background: var(--dark); border-color: transparent; }
+
+  .price-card-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 1.2rem;
+    display: block;
+  }
+
+  .price-card.featured .price-card-label { color: var(--dusty); }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .price-card.featured .price-amount { color: var(--cream); }
+
+  .price-unit { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; display: block; }
+  .price-card.featured .price-unit { color: var(--dusty); }
+
+  .price-note {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(156,126,106,0.2);
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .price-card.featured .price-note {
+    border-top-color: rgba(205,190,170,0.15);
+    color: var(--dusty);
+  }
+
+  .badge-tag {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  .deposit-box {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    border-left: 3px solid var(--accent);
+    background: var(--cream);
+  }
+
+  .deposit-box p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+  .deposit-box strong { color: var(--ink); font-weight: 400; }
+
+  /* FAQ */
+  .faq-section { background: var(--bone); padding: 6rem 2rem; }
+
+  .faq-list {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(184,120,80,0.2);
+    border: 1px solid rgba(184,120,80,0.2);
+    margin-bottom: 3rem;
+  }
+
+  .faq-item {
+    background: var(--bone);
+    padding: 1.4rem 1.8rem;
+    transition: background 0.2s;
+  }
+
+  .faq-item:hover { background: var(--cream); }
+
+  .faq-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  .faq-a {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* FORBEHOLD */
+  .forbehold-block {
+    margin-top: 1rem;
+  }
+
+  .forbehold-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) { .forbehold-grid { grid-template-columns: 1fr; } }
+
+  .forbehold-item {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.5rem 1.6rem;
+    border: 1px solid rgba(184,120,80,0.2);
+    background: var(--cream);
+    align-items: flex-start;
+  }
+
+  .forbehold-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--dusty);
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+  }
+
+  .forbehold-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ember);
+    margin-bottom: 0.4rem !important;
+  }
+
+  .forbehold-item p {
+    font-size: 0.86rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* PRACTICAL */
+  .practical { background: var(--cream); }
+
+  .practical-list {
+    list-style: none;
+    margin-top: 2.5rem;
+    border: 1px solid rgba(156,126,106,0.2);
+  }
+
+  .practical-list li {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.15rem 1.8rem;
+    border-bottom: 1px solid rgba(156,126,106,0.15);
+    font-size: 0.92rem;
+    color: var(--muted);
+    align-items: baseline;
+    transition: background 0.2s;
+  }
+
+  .practical-list li:last-child { border-bottom: none; }
+  .practical-list li:hover { background: var(--bone); }
+
+  .practical-list li::before {
+    content: '—';
+    color: var(--dusty);
+    flex-shrink: 0;
+    font-weight: 300;
+  }
+
+  .practical-list li strong { color: var(--ink); font-weight: 400; }
+
+  /* TEAM SECTION */
+  .team { background: var(--cream); padding: 6rem 2rem; }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(156,126,106,0.2);
+    border: 1px solid rgba(156,126,106,0.2);
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr; } }
+
+  .team-item {
+    padding: 1.8rem 2rem;
+    background: var(--cream);
+    transition: background 0.2s;
+  }
+
+  .team-item:hover { background: var(--bone); }
+  .team-item.full-width { grid-column: 1 / -1; background: var(--bone); }
+  .team-item.full-width:hover { background: var(--cream); }
+
+  .team-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .team-role {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .team-item p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .team-assistants {
+    margin-top: 1px;
+    background: rgba(156,126,106,0.2);
+    border: 1px solid rgba(156,126,106,0.2);
+    border-top: none;
+  }
+
+  .team-assistants-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(156,126,106,0.2);
+  }
+
+  @media (max-width: 600px) { .team-assistants-inner { grid-template-columns: 1fr; } }
+
+  .team-assistant-item {
+    padding: 1.4rem 1.8rem;
+    background: var(--bone);
+    transition: background 0.2s;
+  }
+
+  .team-assistant-item:hover { background: var(--cream); }
+
+  .team-assistant-item .team-name {
+    font-size: 1.05rem;
+    color: var(--ember);
+  }
+
+  .team-assistant-item p {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* LOKALE BLOCK */
+  .lokale-block {
+    margin-top: 3rem;
+    border: 1px solid rgba(156,126,106,0.25);
+    background: var(--bone);
+    overflow: hidden;
+  }
+
+  .lokale-header {
+    padding: 1.2rem 1.8rem;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .lokale-header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--cream);
+  }
+
+  .lokale-header-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--dusty);
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .lokale-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(156,126,106,0.2);
+  }
+
+  @media (max-width: 580px) { .lokale-body { grid-template-columns: 1fr; } }
+
+  .lokale-item {
+    padding: 1.3rem 1.8rem;
+    background: var(--bone);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+
+  .lokale-item:hover { background: var(--cream); }
+
+  .lokale-icon {
+    font-size: 1rem;
+    color: var(--warm);
+    flex-shrink: 0;
+    padding-top: 0.15rem;
+  }
+
+  .lokale-item p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .lokale-item p strong { color: var(--ink); font-weight: 400; }
+
+  .lokale-note {
+    padding: 1rem 1.8rem;
+    background: rgba(196,56,32,0.06);
+    border-top: 1px solid rgba(196,56,32,0.15);
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.65;
+  }
+
+  /* SIGNUP */
+  .signup { background: var(--ink); padding: 7rem 2rem; text-align: center; }
+  .signup .section-eyebrow { color: var(--dusty); }
+
+  .signup-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .signup-title em { font-style: italic; color: var(--dusty); }
+
+  .signup-sub {
+    font-size: 0.9rem;
+    color: rgba(205,190,170,0.55);
+    max-width: 460px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 1.1rem 3rem;
+    background: var(--accent);
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+  }
+
+  .btn-primary:hover { opacity: 0.85; }
+
+  .signup-fine {
+    margin-top: 2rem;
+    font-size: 0.72rem;
+    color: rgba(205,190,170,0.3);
+    letter-spacing: 0.1em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 2.5rem 2rem;
+    border-top: 1px solid rgba(205,190,170,0.08);
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.72rem;
+    color: rgba(205,190,170,0.3);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 480px) {
+    section { padding: 4rem 1.25rem; }
+    .hero { padding: 5rem 1.5rem 4rem; }
+    .hero-meta { gap: 1.5rem; }
+    .program-item { grid-template-columns: 2.2rem 1fr; gap: 1rem; padding: 1.1rem 1.2rem; }
+    .timeline-bar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Et intimt weekend-kursus &nbsp;·&nbsp; 2026</p>
+  <h1 class="hero-title">Dirty<br><em>Talk</em></h1>
+  <p class="hero-sub">Workshop for par</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <strong>5–6 september 2026</strong>
+      To dage · Kl. 10–16
+    </div>
+    <div class="hero-meta-item">
+      <strong>4.900 kr</strong>
+      pr. par
+    </div>
+    <div class="hero-meta-item">
+      <strong>Nær Danshøj station</strong>
+      Adresse sendes ved tilmelding
+    </div>
+    <div class="hero-meta-item">
+      <strong>Sprog: dansk</strong>
+      Undervisning og øvelser
+    </div>
+  </div>
+  <a href="#tilmelding" class="hero-cta">Ansøg om plads</a>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Udforsk</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="om">
+  <div class="container">
+    <div class="intro-grid">
+      <div>
+        <span class="section-eyebrow reveal">Om workshoppen</span>
+        <h2 class="section-title reveal">Ord har <em>kraft.</em><br>Lær at bruge dem.</h2>
+        <p class="lead reveal">
+          Denne weekend handler om at finde dit eget sprog — det ærlige, det legende, det erotiske. I et trygt og rart fællesskab udforsker vi psykologien bag ord, øver os i timing og invitationer, og opdager hvad der tænder og slukker.
+        </p>
+        <p class="lead reveal" style="margin-top:1.2rem;">
+          Workshoppen er på dansk og er designet til par der ønsker en dybere, mere levende forbindelse — verbalt og intimt.
+        </p>
+      </div>
+      <div class="intro-visual reveal">
+        <p class="intro-quote">
+          "Bedre snak, ord og samtale om sex — giver bedre sex! Det er ikke bare frækt, det er også super nyttigt."
+        </p>
+        <span class="intro-quote-attr">Grundtanken bag workshoppen</span>
+      </div>
+    </div>
+
+    <!-- FORMÅL -->
+    <div class="formal-block reveal">
+      <span class="section-eyebrow" style="margin-bottom:1rem;">Formål</span>
+      <div class="formal-grid">
+        <div class="formal-item">
+          <div class="formal-icon">❶</div>
+          <p>Styrke parrets kommunikation gennem tydelig og klar dialog — så frækhed og sjov sex bliver mere tilgængeligt og flydende.</p>
+        </div>
+        <div class="formal-item">
+          <div class="formal-icon">❷</div>
+          <p>Styrke skriftlige beskeder, så I kan være mere frække og nærværende i det digitale rum.</p>
+        </div>
+        <div class="formal-item">
+          <div class="formal-icon">❸</div>
+          <p>Blive mere bevidst om psykologien bag generthed — og styrken der ligger i øvelse, lyst og grænser.</p>
+        </div>
+        <div class="formal-item">
+          <div class="formal-icon">❹</div>
+          <p>Have det sjovt under de to dage i et trygt og rart rum — uden præstationskrav.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REGLER OG RAMMER -->
+    <div class="rules-block reveal">
+      <div class="rules-header">
+        <span class="rules-title">Rammer for weekenden</span>
+      </div>
+      <ul class="rules-list">
+        <li>Der er <strong>ikke nøgenhed</strong> på kurset</li>
+        <li>Det er <strong>ikke tilladt at optage andre</strong> eller tage fotos af medstudererende</li>
+        <li>Du skal acceptere og følge disse rammer — ellers kan du bortvises</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROGRAM DAG 1 -->
+<section class="program" id="program">
+  <div class="container">
+    <span class="section-eyebrow reveal">Program</span>
+    <h2 class="section-title reveal"><em>Dag 1</em> — Fundament og sprog</h2>
+    <p class="lead reveal" style="margin-bottom:3rem;">Kl. 10–16 · Ca. seks timer med tre pauser · Medbring selv mad</p>
+
+    <div class="timeline-bar reveal">
+      <div class="time-slot"><strong>10:00</strong>Start</div>
+      <div class="time-slot break"><strong>11:15</strong>Pause</div>
+      <div class="time-slot"><strong>11:30</strong>Fortsætter</div>
+      <div class="time-slot break"><strong>13:00</strong>Frokost</div>
+      <div class="time-slot"><strong>14:00</strong>Eftermiddag</div>
+      <div class="time-slot break"><strong>15:15</strong>Pause</div>
+      <div class="time-slot"><strong>15:30</strong>Afslutning</div>
+      <div class="time-slot"><strong>16:00</strong>Slut</div>
+    </div>
+
+    <div class="program-grid reveal">
+      <div class="program-item">
+        <div class="program-letter">✦</div>
+        <div class="program-content">
+          <h4>Velkommen</h4>
+          <p>Introduktion til rammerne, hinanden og weekendens intention.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">A</div>
+        <div class="program-content">
+          <h4>Positivt tilsagn — Grænser og rammer</h4>
+          <p>Hvad vil det sige at sige ja med hele sig selv? Vi arbejder med åbenhed, lyst og tryghed som fundament for at øve os.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">B</div>
+        <div class="program-content">
+          <h4>Psykologien bag ord</h4>
+          <p>Behov, skam, generøsitet, lyst og frihed — hvorfor er det svært at sige visse ting højt, og hvad sker der når vi gør det?</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">C</div>
+        <div class="program-content">
+          <h4>Timing · Hensigt · Invitationer</h4>
+          <p>Hvornår virker det? Hvad er forskellen på en gave og et krav? Vi øver os i at invitere frem for at antage.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">D</div>
+        <div class="program-content">
+          <h4>Erotiske og pornografiske ord — øvelser</h4>
+          <p>Praktisk øvelse med sproget. Fra uhøjtideligt til eksplicit — vi finder din komfortzone og strækker den blidt.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">E</div>
+        <div class="program-content">
+          <h4>Turn on · Turn off · Øv og øv igen</h4>
+          <p>Nogen ands 'bøvet' er en andens ahh — accept af forskellighed. Frugten af at øve: hvad ændrer sig når det bliver naturligt?</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">F</div>
+        <div class="program-content">
+          <h4>Stemme og stemmefald</h4>
+          <p>Den vokale dimension — tone og tempo og det som styrker det frække.</p>
+        </div>
+      </div>
+      <div class="program-special">
+        <div class="program-letter" style="font-size:1.4rem;padding-top:0.1rem;">📷</div>
+        <div class="program-content">
+          <h4 style="color:var(--cream);">Frivillig fotosession <span class="photo-tag">250–350 kr</span></h4>
+          <p style="color:var(--dusty);">Under øvelserne — privat og på dine egne præmisser. Ca. 3–4 billeder udelukkende til jer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-note reveal">
+      Bemærk: De forskellige temaer kan tages i anden rækkefølge end angivet. Ved meget snak og mange spørgsmål kan det være, at nogle ting bliver kortere.
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM DAG 2 -->
+<section class="program program-day2" id="program-dag2">
+  <div class="container">
+    <h2 class="section-title reveal"><em>Dag 2</em> — Dybde og fordybelse</h2>
+    <p class="lead reveal" style="margin-bottom:3rem;">Kl. 10–16 · Samme struktur som dag 1 — med ny dybde og nye øvelser</p>
+
+    <div class="timeline-bar reveal">
+      <div class="time-slot"><strong>10:00</strong>Start</div>
+      <div class="time-slot break"><strong>11:15</strong>Pause</div>
+      <div class="time-slot"><strong>11:30</strong>Fortsætter</div>
+      <div class="time-slot break"><strong>13:00</strong>Frokost</div>
+      <div class="time-slot"><strong>14:00</strong>Eftermiddag</div>
+      <div class="time-slot break"><strong>15:15</strong>Pause</div>
+      <div class="time-slot"><strong>15:30</strong>Afslutning</div>
+      <div class="time-slot"><strong>16:00</strong>Slut</div>
+    </div>
+
+    <div class="program-grid reveal">
+      <div class="program-item">
+        <div class="program-letter">✦</div>
+        <div class="program-content">
+          <h4>Velkommen</h4>
+          <p>Introduktion til dagen og landing med kort meditation.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">A</div>
+        <div class="program-content">
+          <h4>Oplæsning</h4>
+          <p>Vi læser højt — for hinanden og for os selv. Sproget sættes i stemme og krop.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">B</div>
+        <div class="program-content">
+          <h4>Fantasier</h4>
+          <p>At sætte ord på det indre billede. Øvelser i at dele og modtage fantasier med nysgerrighed og åbenhed.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">C</div>
+        <div class="program-content">
+          <h4>Litteratur</h4>
+          <p>Erotisk og sanselig litteratur som inspirationskilde — hvad kan teksten lære os om sprogets muligheder?</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">D</div>
+        <div class="program-content">
+          <h4>Erotiske og pornografiske ord — øvelser</h4>
+          <p>Dybere øvelser med det eksplicitte sprog. Vi bygger videre på dag 1 og finder nye lag i ordene.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">E</div>
+        <div class="program-content">
+          <h4>Turn on · Turn off · Øv og øv igen</h4>
+          <p>Frugten af to dages øvelse — nogen ands 'bøvet' er en andens ahh. Accept af forskellighed og glæden ved at finde sit eget sprog.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">F</div>
+        <div class="program-content">
+          <h4>Stemme og stemmefald</h4>
+          <p>Den vokale dimension — tone og tempo og det som styrker det frække.</p>
+        </div>
+      </div>
+      <div class="program-item">
+        <div class="program-letter">✦</div>
+        <div class="program-content">
+          <h4>Farvel og på gensyn</h4>
+          <p>Afrunding, integration og næste skridt. Vi tager det med hjem.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-note reveal">
+      Bemærk: De forskellige temaer kan tages i anden rækkefølge end angivet. Ved meget snak og mange spørgsmål kan det være, at nogle ting bliver kortere.
+    </div>
+  </div>
+</section>
+
+<!-- AKADEMISK HJØRNE -->
+<section class="academic">
+  <div class="container">
+    <span class="section-eyebrow reveal">Fagligt fordybelsesrum</span>
+    <h2 class="section-title reveal">Det <em style="color:var(--dusty);">akademiske</em> hjørne</h2>
+    <p class="lead reveal" style="color:var(--dusty);">For den nysgerrige — et rum der giver sproget kontekst, kultur og nuance.</p>
+    <div class="academic-grid reveal">
+      <div class="academic-item">
+        <h4>Slang og det "bøvede"</h4>
+        <p>Hvorfra kommer ordene, og hvad bærer de med sig af kultur og tabu?</p>
+      </div>
+      <div class="academic-item">
+        <h4>Poesi og litteratur</h4>
+        <p>Det erotiske sprog i litterær form — titler på dansk og engelsk. Få inspiration.</p>
+      </div>
+      <div class="academic-item">
+        <h4>Oversættelser</h4>
+        <p>Hvad mister og vinder vi på tværs af sprog? Erotik på dansk vs. engelsk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="section-eyebrow">Frivilligt tilvalg</span>
+    <h2 class="section-title">Privat <em style="color:var(--bone);">fotosession</em></h2>
+    <p class="lead">Under øvelserne er der mulighed for en privat fotosession på dine præmisser. Billederne er udelukkende til jer.</p>
+    <span class="photo-price">Ca. 3–4 billeder &nbsp;·&nbsp; 250–350 kr</span>
+  </div>
+</div>
+
+<!-- HVEM STÅR BAG -->
+<section class="team" id="team">
+  <div class="container">
+    <span class="section-eyebrow reveal">Holdet bag</span>
+    <h2 class="section-title reveal">Hvem <em>står bag?</em></h2>
+    <p class="lead reveal">Vi er et lille hold med forskellige kompetencer — forenet af nysgerrighed, erfaring og kærlighed til det gode rum.</p>
+
+    <div class="team-grid reveal">
+      <div class="team-item">
+        <div class="team-name">Nikolaj</div>
+        <span class="team-role">Underviser &amp; Initiativtager</span>
+        <p>Har lavet dirty talk-workshops siden 2019 og har holdt ca. 15–25 stykker. Nikolaj arbejder til daglig på et bibliotek og elsker bøger — og det mærkes i tilgangen til sproget og den litterære dimension af workshoppen.</p>
+      </div>
+      <div class="team-item">
+        <div class="team-name">Marie</div>
+        <span class="team-role">Underviser &amp; Stemmeekspert</span>
+        <p>Underviser og laver workshops med stemmen som omdrejningspunkt. Elsker sang og bøger — og bringer den vokale og sanselige dimension til weekenden.</p>
+      </div>
+    </div>
+
+    <div class="team-assistants reveal">
+      <div class="team-assistants-inner">
+        <div class="team-assistant-item">
+          <div class="team-name">xx</div>
+          <span class="team-role">SoMe &amp; Fotografering</span>
+          <p>Hjælper med kommunikation på sociale medier og varetager fotosessionerne under workshoppen.</p>
+        </div>
+        <div class="team-assistant-item">
+          <div class="team-name">zz</div>
+          <span class="team-role">Øvelsesassistent</span>
+          <p>Assisterer under øvelserne — er klar til at hjælpe hvis energien går i stå eller øvelserne trænger til nyt liv.</p>
+        </div>
+        <div class="team-assistant-item">
+          <div class="team-name">yy</div>
+          <span class="team-role">Øvelsesassistent &amp; Praktisk</span>
+          <p>Assisterer under øvelserne og hjælper praktisk med alt det der sker i baggrunden for at weekenden løber glat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRISER -->
+<section class="pricing" id="priser">
+  <div class="container">
+    <span class="section-eyebrow reveal">Priser</span>
+    <h2 class="section-title reveal">Investering i <em>nærvær</em></h2>
+
+    <div class="pricing-cards reveal">
+      <div class="price-card featured">
+        <span class="badge-tag">Early Bird</span>
+        <span class="price-card-label">Tilmelding inden 1. august</span>
+        <div class="price-amount">4.600</div>
+        <span class="price-unit">kr &nbsp;·&nbsp; pr. par &nbsp;·&nbsp; begge dage</span>
+        <p class="price-note">300 kr i rabat ved tidlig tilmelding. Samme indhold, samme oplevelse — belønner den nysgerrige.</p>
+      </div>
+      <div class="price-card">
+        <span class="price-card-label">Ordinær pris</span>
+        <div class="price-amount">4.900</div>
+        <span class="price-unit">kr &nbsp;·&nbsp; pr. par &nbsp;·&nbsp; begge dage</span>
+        <p class="price-note">Fuld deltagelse begge dage inkl. alle moduler A–F, akademisk hjørne og oplæsning.</p>
+      </div>
+    </div>
+
+    <div class="deposit-box reveal">
+      <p>
+        <strong>Depositum: 1.000 kr</strong> betales ved tilmelding via MobilePay og bekræfter din plads.
+        Depositummet er <strong>ikke refunderbart</strong>. Det resterende beløb betales nærmere arrangementsdatoen.
+        <br><br>
+        <strong>Endelig tilmelding:</strong> Tilmelding til begge dage skal være gennemført inden <strong>31. august kl. 24:00</strong>. Depositummet sikrer jer en plads.
+        <br><br>
+        <strong>Mad og drikke medbringes selv.</strong> Der er pauser til frokost og kaffe/te i løbet af dagen.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <span class="section-eyebrow reveal">Spørgsmål og svar</span>
+    <h2 class="section-title reveal">Ofte stillede <em>spørgsmål</em></h2>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q">Bliver der noget i 2027?</div>
+        <div class="faq-a">Ja, det arbejder vi på.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hvor mange deltager?</div>
+        <div class="faq-a">Vi er et lille hold på ca. 18 deltagere, for at bevare en intim og tryg atmosfære.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hvem er I der leder weekenden?</div>
+        <div class="faq-a">Vi er ca. 4 arrangører med assistenter. Vi har baggrund i det akademiske miljø, tantra- og kinkmiljøet i København samt erfaringer med at lave forskellige workshops.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Bliver der et tilbud til singler?</div>
+        <div class="faq-a">Det kræver et andet format, men måske ja på sigt — hvis frivillige kræfter også træder til. Foreløbig er workshoppen kun for par.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hvad hvis man bliver syg?</div>
+        <div class="faq-a">Bliver man syg mens weekenden foregår, kan vi desværre ikke give penge tilbage. Vi opfordrer til at tegne en rejse- eller afbestillingsforsikring hvis det er en bekymring.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hvad sker der ved konflikter?</div>
+        <div class="faq-a">Du forventes selv at tage ansvar for at løse eventuelle konflikter. Kurset giver rammerne — ansvaret for egne handlinger og reaktioner bæres af den enkelte.</div>
+      </div>
+    </div>
+
+    <!-- FORBEHOLD -->
+    <div class="forbehold-block reveal">
+      <span class="section-eyebrow" style="margin-bottom:1.2rem;">Forbehold</span>
+      <div class="forbehold-grid">
+        <div class="forbehold-item">
+          <div class="forbehold-letter">a</div>
+          <div>
+            <p class="forbehold-title">Trauma-informeret tilgang</p>
+            <p>Vi er trauma-informerede, men vi behandler ikke traumer som overgreb og mishandling. Vær selv opmærksom på din deltagelse og dine grænser. Alle kan til enhver tid forlade øvelser eller weekenden, hvis de ønsker det.</p>
+          </div>
+        </div>
+        <div class="forbehold-item">
+          <div class="forbehold-letter">b</div>
+          <div>
+            <p class="forbehold-title">Kønsidentitet og forskellighed</p>
+            <p>Vi er åbne for alle kønsidentiteter, og som deltager kan du møde andre med en anderledes holdning end din egen. Der skal være plads til alle — accepter variationer i kønsidentitet, hvis du ønsker at deltage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRAKTISK INFO -->
+<section class="practical" id="praktisk">
+  <div class="container">
+    <span class="section-eyebrow reveal">Praktisk</span>
+    <h2 class="section-title reveal"><em>Alt</em> du skal vide</h2>
+    <ul class="practical-list reveal">
+      <li><strong>Dato:</strong>&nbsp; 5–6 september 2026</li>
+      <li><strong>Sted:</strong>&nbsp; Privat sted nær Danshøj station — præcis adresse sendes ved tilmelding</li>
+      <li><strong>Tid:</strong>&nbsp; Kl. 10:00–16:00 begge dage — ca. 6 timer med tre pauser</li>
+      <li><strong>Sprog:</strong>&nbsp; Workshoppen foregår udelukkende på dansk</li>
+      <li><strong>Deltagere:</strong>&nbsp; For par — begge parter deltager hele weekenden</li>
+      <li><strong>Mad:</strong>&nbsp; Medbring selv mad til frokostpausen — der er ikke catering</li>
+      <li><strong>Tilmelding:</strong>&nbsp; Via ansøgningsformular med positiv tilsagn og accept af vilkår</li>
+      <li><strong>Depositum:</strong>&nbsp; 1.000 kr pr. par via MobilePay — ikke refunderbart</li>
+      <li><strong>Fotosession:</strong>&nbsp; Frivilligt tilvalg under øvelser — 250–350 kr for 3–4 private billeder</li>
+      <li><strong>Pladser:</strong>&nbsp; Ca. 18 deltagere — begrænset antal for en intim og tryg atmosfære</li>
+      <li><strong>Handicapvenlig adgang:</strong>&nbsp; Desværre ikke tilgængelig</li>
+    </ul>
+
+    <!-- LOKALE INFO -->
+    <div class="lokale-block reveal">
+      <div class="lokale-header">
+        <div>
+          <span class="lokale-header-eyebrow">Rammerne</span>
+          <div class="lokale-header-title">Lokalerne og stemningen</div>
+        </div>
+      </div>
+      <div class="lokale-body">
+        <div class="lokale-item">
+          <div class="lokale-icon">🏠</div>
+          <p><strong>Hjemlige omgivelser</strong> — vi er i hjemlige rammer, som vi tror kan skabe en afslappet og tryg stemning fra første stund.</p>
+        </div>
+        <div class="lokale-item">
+          <div class="lokale-icon">🚪</div>
+          <p><strong>To lokaler</strong> til rådighed — plus et privat lokale man kan bruge periodevis, hvis man er meget genert eller har brug for et øjebliks ro.</p>
+        </div>
+        <div class="lokale-item">
+          <div class="lokale-icon">🎧</div>
+          <p><strong>Høreværn og støjdæmpning</strong> er tilgængeligt — har du brug for en pause fra lyd, er der måder at fravælge det på.</p>
+        </div>
+        <div class="lokale-item">
+          <div class="lokale-icon">♿</div>
+          <p><strong>Handicapvenlig adgang:</strong> Stedet er desværre ikke handicapvenligt tilgængeligt. Kontakt os hvis du har spørgsmål.</p>
+        </div>
+      </div>
+      <div class="lokale-note">
+        Præcis adresse og praktisk information om ankomst sendes til tilmeldte deltagere inden weekenden.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNUP CTA -->
+<section class="signup" id="tilmelding">
+  <div class="container" style="max-width:580px;">
+    <span class="section-eyebrow">Tilmelding</span>
+    <h2 class="signup-title">Klar til at<br><em>tage sproget tilbage?</em></h2>
+    <p class="signup-sub">Ansøgningsformularen tager et par minutter. Vi vender tilbage med bekræftelse.</p>
+    <a href="#" class="btn-primary">Ansøg om plads</a>
+    <p class="signup-fine">Tilmelding senest 31. august kl. 24:00 &nbsp;·&nbsp; Early bird inden 1. august &nbsp;·&nbsp; Begrænset antal pladser</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Dirty Talk Workshop &nbsp;·&nbsp; 5–6 september 2026 &nbsp;·&nbsp; Nær Danshøj station &nbsp;·&nbsp; For par &nbsp;·&nbsp; På dansk</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 55);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.07 });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
